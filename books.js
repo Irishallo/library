@@ -28,5 +28,12 @@ function addBookToLibrary() {
   myLibrary.push(new Book(bookName, authorName, pages, read));
 }
 
+function displayBooks() {
+  const card = document.createElement(div);
+  
+}
+
 const submitBtn = document.getElementById("submit");
 submitBtn.addEventListener('click', addBookToLibrary);
+
+//myLibrary.forEach(displayBooks);
