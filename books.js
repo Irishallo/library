@@ -1,5 +1,7 @@
 let myLibrary = [];
 
+const cardsContainer = document.getElementById('cardscontainer');
+
 function Book(title, author, pages, read) {
     this.title = title
     this.author = author
@@ -29,8 +31,23 @@ function addBookToLibrary() {
 }
 
 function displayBooks() {
-  const card = document.createElement(div);
-  
+  for (i = 0; i < myLibrary.length; i++) {
+    const bookCard = document.createElement('div');
+    let cardTitle = document.createElement('p');
+    let cardAut = document.createElement('p');
+    let cardPages = document.createElement('p');
+    let cardRead = document.createElement('p');
+    for (property in myLibrary[i]) {
+      console.log(`key= ${property} value = ${myLibrary[i][property]}`)
+   }
+    
+    bookCard.classList.add('book');
+    bookCard.appendChild(cardTitle);
+    bookCard.appendChild(cardAut);
+    bookCard.appendChild(cardPages);
+    bookCard.appendChild(cardRead);
+    cardsContainer.appendChild(bookCard);
+  }
 }
 
 const submitBtn = document.getElementById("submit");
