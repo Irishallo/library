@@ -37,10 +37,10 @@ function displayBooks() {
     let cardAut = document.createElement('p');
     let cardPages = document.createElement('p');
     let cardRead = document.createElement('p');
-    for (property in myLibrary[i]) {
-      console.log(`key= ${property} value = ${myLibrary[i][property]}`)
-   }
-    
+    cardTitle.innerText = `Title: ${myLibrary[i].title}`;
+    cardAut.innerText = `Author: ${myLibrary[i].author}`;
+    cardPages.innerText= `Number of pages: ${myLibrary[i].pages}`;
+    cardRead.innerText = myLibrary[i].read;
     bookCard.classList.add('book');
     bookCard.appendChild(cardTitle);
     bookCard.appendChild(cardAut);
@@ -52,5 +52,6 @@ function displayBooks() {
 
 const submitBtn = document.getElementById("submit");
 submitBtn.addEventListener('click', addBookToLibrary);
+submitBtn.addEventListener('click', displayBooks);
 
 //myLibrary.forEach(displayBooks);
