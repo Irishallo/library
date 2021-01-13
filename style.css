@@ -9,8 +9,7 @@ body {
 }
 
 #cardscontainer {
-    width: 600px;
-    background-color: aliceblue;
+    width: 950px;
     display: inline-block;
     position: absolute;
     top: 26px;
@@ -18,6 +17,9 @@ body {
 }
 
 .book {
-    width: 400px;
     background-color: #e7bff7;
+    width: max-content;
+    padding: 5px;
+    display: inline-block;
+    margin: 10px;
 }
