@@ -1,5 +1,6 @@
 body {
     font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #input {
@@ -23,3 +24,25 @@ body {
     display: inline-block;
     margin: 10px;
 }
+
+
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+  }
+
+  td {
+    text-align: center;
+    padding: 5px;
+  }
+
+  tr:nth-child(even) {
+      background-color: rgba(156, 136, 143, 0.3);
+    }
+
+    td:nth-child(odd) {
+        font-weight: bold;
+        border-right: 1px solid #000000;
+      }
