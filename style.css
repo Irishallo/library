@@ -1,24 +1,28 @@
 body {
     font-size: 18px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #ecdfd1;
 }
 
 #input {
     width: 250px;
-    background-color: #f0bf97;
+    background-color: #607196;
     text-align: center;
+    padding: 10px;
+    position: absolute;
+    top: 20px;
 }
 
 #cardscontainer {
     width: 950px;
     display: inline-block;
     position: absolute;
-    top: 26px;
+    top: 20px;
     left: 270px;
 }
 
 .book {
-    background-color: #e7bff7;
+    background-color: #bbd6c0;
     width: max-content;
     padding: 5px;
     display: inline-block;
@@ -30,7 +34,8 @@ body {
   table {
     width: 100%;
     border-collapse: collapse;
-    border: 1px solid black;
+    border: 1px solid #364b36;
+    color: #364b36;
   }
 
   td {
@@ -39,10 +44,10 @@ body {
   }
 
   tr:nth-child(even) {
-      background-color: rgba(156, 136, 143, 0.3);
+      background-color: rgba(255, 255, 255, 0.3);
     }
 
     td:nth-child(odd) {
         font-weight: bold;
-        border-right: 1px solid #000000;
+        border-right: 1px solid #445544;
       }

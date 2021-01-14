@@ -78,11 +78,6 @@ function displayBooks() {
       read2.appendChild(r2);
       cardRead.appendChild(read1);
       cardRead.appendChild(read2);
-     /* cardTitle.innerText = `Title: ${myLibrary[i].title}`;
-      cardAut.innerText = `Author: ${myLibrary[i].author}`;
-      cardPages.innerText= `Number of pages: ${myLibrary[i].pages}`;
-      cardRead.innerText = myLibrary[i].read; */
-
       bookCard.classList.add('book');
       bookCard.setAttribute("id", `${myLibrary[i].title}`);
       cardTable.appendChild(cardTitle);
@@ -90,6 +85,12 @@ function displayBooks() {
       cardTable.appendChild(cardPages);
       cardTable.appendChild(cardRead);
       bookCard.appendChild(cardTable);
+      let btn1 = document.createElement("BUTTON");
+      btn1.innerHTML = "delete book";
+      bookCard.appendChild(btn1);
+      let btn2 = document.createElement("BUTTON");
+      btn2.innerHTML = "read the book";
+      bookCard.appendChild(btn2);
       cardsContainer.appendChild(bookCard);
     }
   }
