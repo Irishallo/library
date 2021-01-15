@@ -4,20 +4,45 @@ body {
     background-color: #ecdfd1;
 }
 
-#input {
+h1 {
+  text-align: center;
+}
+
+.input1 {
+    position: relative;
+    transition: transform 1s ease;
+    height: 0;
+    overflow-y: hidden;
     width: 250px;
-    background-color: #607196;
+    transform: translateY(-100%);
+    transform: translateX(0%);
+}
+
+.input2 {
+    width: 250px;
+    background-color: #5F8FBF;
     text-align: center;
     padding: 10px;
-    position: absolute;
-    top: 20px;
+    position: relative;
+    transition: transform 1s ease; 
+    transform: translateY(0%);
+    transform: translateX(0%);
+}
+
+#showform {
+    width: 270px;
+    height: 50px;
+    background-color: #467AAF;
+    text-align: center;
+    color: #ffffff;
+    font-size: 14px;
 }
 
 #cardscontainer {
     width: 950px;
     display: inline-block;
-    position: absolute;
-    top: 20px;
+    position: relative;
+    top: -350px;
     left: 270px;
 }
 
@@ -49,5 +74,5 @@ body {
 
     td:nth-child(odd) {
         font-weight: bold;
-        border-right: 1px solid #445544;
+        border-right: 1px solid #364b36;
       }

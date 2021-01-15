@@ -96,6 +96,15 @@ function displayBooks() {
   }
 }
 
+function showForm() {
+  let form = document.getElementById('input');
+  form.classList.toggle('input1');
+  form.classList.toggle('input2');
+}
+
+const formBtn = document.getElementById('showform');
+formBtn.addEventListener('click', showForm);
+
 const submitBtn = document.getElementById("submit");
 submitBtn.addEventListener('click', addBookToLibrary);
 submitBtn.addEventListener('click', displayBooks);
