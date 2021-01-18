@@ -5,7 +5,9 @@ body {
 }
 
 h1 {
-  text-align: center;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .input1 {
@@ -21,7 +23,7 @@ h1 {
 .input2 {
     width: 250px;
     background-color: #5F8FBF;
-    text-align: center;
+    text-align: left;
     padding: 10px;
     position: relative;
     transition: transform 1s ease; 
@@ -41,9 +43,9 @@ h1 {
 #cardscontainer {
     width: 950px;
     display: inline-block;
-    position: relative;
-    top: -350px;
-    left: 270px;
+    position: absolute;
+    top: 80px;
+    left: 280px;
 }
 
 .book {
@@ -56,23 +58,47 @@ h1 {
 
 
   
-  table {
+table {
     width: 100%;
     border-collapse: collapse;
     border: 1px solid #364b36;
     color: #364b36;
-  }
+}
 
-  td {
+td {
     text-align: center;
     padding: 5px;
-  }
+}
 
-  tr:nth-child(even) {
-      background-color: rgba(255, 255, 255, 0.3);
-    }
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.3);
+}
 
-    td:nth-child(odd) {
-        font-weight: bold;
-        border-right: 1px solid #364b36;
-      }
+td:nth-child(odd) {
+    font-weight: bold;
+    border-right: 1px solid #364b36;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #3A6692;
+    border-radius: 4px;
+}
+
+h2 {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  text-align: center;
+}
+
+input[type=button] {
+  background-color: #3A6692;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-decoration: none;
+  width: 100%;
+}

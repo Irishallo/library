@@ -1,4 +1,5 @@
 let myLibrary = [];
+let form = document.getElementById('input');
 
 const cardsContainer = document.getElementById('cardscontainer');
 
@@ -94,10 +95,11 @@ function displayBooks() {
       cardsContainer.appendChild(bookCard);
     }
   }
+  form.classList.toggle('input1');
+  form.classList.toggle('input2');
 }
 
 function showForm() {
-  let form = document.getElementById('input');
   form.classList.toggle('input1');
   form.classList.toggle('input2');
 }
