@@ -88,9 +88,12 @@ function displayBooks() {
       bookCard.appendChild(cardTable);
       let btn1 = document.createElement("BUTTON");
       btn1.innerHTML = "delete book";
+      btn1.classList.add("btn1");
+      btn1.setAttribute("data-index", `${i}`);
       bookCard.appendChild(btn1);
       let btn2 = document.createElement("BUTTON");
       btn2.innerHTML = "read the book";
+      btn2.classList.add("btn2");
       bookCard.appendChild(btn2);
       cardsContainer.appendChild(bookCard);
     }
@@ -102,6 +105,10 @@ function displayBooks() {
 function showForm() {
   form.classList.toggle('input1');
   form.classList.toggle('input2');
+}
+
+function deleteBook() {
+  // put here how to delete book from array
 }
 
 const formBtn = document.getElementById('showform');
