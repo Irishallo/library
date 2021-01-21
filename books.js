@@ -1,5 +1,6 @@
 let myLibrary = [];
 let form = document.getElementById('input');
+let deleteBtn = document.querySelectorAll(".btn1");
 
 const cardsContainer = document.getElementById('cardscontainer');
 
@@ -91,6 +92,7 @@ function displayBooks() {
       btn1.classList.add("btn1");
       btn1.setAttribute("data-index", `${i}`);
       bookCard.appendChild(btn1);
+      btn1.addEventListener('click', deleteBook);
       let btn2 = document.createElement("BUTTON");
       btn2.innerHTML = "read the book";
       btn2.classList.add("btn2");
@@ -107,13 +109,17 @@ function showForm() {
   form.classList.toggle('input2');
 }
 
-function deleteBook() {
-  // put here how to delete book from array
-}
-
 const formBtn = document.getElementById('showform');
 formBtn.addEventListener('click', showForm);
 
 const submitBtn = document.getElementById("submit");
 submitBtn.addEventListener('click', addBookToLibrary);
 submitBtn.addEventListener('click', displayBooks);
+
+function deleteBook() {
+  // put here how to delete book from array
+  let indexNumber = this.getAttribute('data-index');
+  myLibrary.splice(indexNumber, 1);
+  console.log(this.getAttribute('data-index'));
+}
+
