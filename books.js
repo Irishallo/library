@@ -15,7 +15,6 @@ function Book(title, author, pages, read) {
   }
 
 function addBookToLibrary() {
-  // do stuff here
   let bookName = document.getElementById("title").value;
   let authorName = document.getElementById("author").value;
   let pages = document.getElementById("pages").value;
@@ -120,6 +119,9 @@ function deleteBook() {
   // put here how to delete book from array
   let indexNumber = this.getAttribute('data-index');
   myLibrary.splice(indexNumber, 1);
-  console.log(this.getAttribute('data-index'));
+  const parent = document.getElementById("cardscontainer");
+  let child = document.getElementById(`${this.parentNode.id}`);
+  parent.removeChild(child);
+  console.log(this.parentNode.id);
 }
 
