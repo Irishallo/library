@@ -35,7 +35,7 @@ function displayBooks() {
   for (i = 0; i < myLibrary.length; i++) {
     let myEle = document.getElementById(`${myLibrary[i].title}`);
     if(myEle){
-        console.log("book is already there!");
+        
     } else {
       const bookCard = document.createElement('div');
       let cardTable = document.createElement('table');
@@ -122,6 +122,14 @@ function deleteBook() {
   const parent = document.getElementById("cardscontainer");
   let child = document.getElementById(`${this.parentNode.id}`);
   parent.removeChild(child);
-  console.log(this.parentNode.id);
+  containerChildren = parent.childNodes;
+  for (i = 0; i < containerChildren.length; i++) {
+    // it needs to be a number
+    if(containerChildren[i].getAttribute('data-index') > indexNumber) {
+      console.log('data index needs to be changed');
+    } else {
+      console.log(containerChildren[i].getAttribute('data-index'));
+    }
+  } 
 }
 
