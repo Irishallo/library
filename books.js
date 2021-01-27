@@ -116,7 +116,6 @@ submitBtn.addEventListener('click', addBookToLibrary);
 submitBtn.addEventListener('click', displayBooks);
 
 function deleteBook() {
-  // put here how to delete book from array
   let indexNumber = this.getAttribute('data-index');
   myLibrary.splice(indexNumber, 1);
   const parent = document.getElementById("cardscontainer");
@@ -124,11 +123,15 @@ function deleteBook() {
   parent.removeChild(child);
   containerChildren = parent.childNodes;
   for (i = 0; i < containerChildren.length; i++) {
-    // it needs to be a number
-    if(containerChildren[i].getAttribute('data-index') > indexNumber) {
-      console.log('data index needs to be changed');
+    let contChild = containerChildren[i];
+    let btnChild = contChild.querySelector('button');
+    let indexChild = btnChild.getAttribute('data-index');
+    let newIndex = indexChild - 1;
+    if(Number(indexChild) > indexNumber) {
+      btnChild.setAttribute('data-index', `${newIndex}`)
+      console.log(`new index = ${newIndex}`);
     } else {
-      console.log(containerChildren[i].getAttribute('data-index'));
+      console.log(Number(btnChild.getAttribute('data-index')));
     }
   } 
 }
