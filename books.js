@@ -12,6 +12,12 @@ function Book(title, author, pages, read) {
     this.info = function() {
         return `${title} by ${author}, ${pages} pages, ${read}`
       }
+    this.changeRead = function() {
+      if(read == 'not yet read') {
+        read = 'read';
+    } else {
+    read = 'not yet read';
+    } } 
   }
 
 function addBookToLibrary() {
@@ -28,7 +34,15 @@ function addBookToLibrary() {
         read = 'not yet read';
     }}
 
-  myLibrary.push(new Book(bookName, authorName, pages, read));
+    /*for (i = 0; i < cardsContainer.length; i++) {
+      let contChild = cardsContainer.childNodes;
+      if(contChild[i].id == bookName) {
+        console.log('already exists');
+      }  else {*/
+        myLibrary.push(new Book(bookName, authorName, pages, read));
+      //} 
+    //}  
+  
 }
 
 function displayBooks() {
@@ -81,6 +95,7 @@ function displayBooks() {
       cardRead.appendChild(read2);
       bookCard.classList.add('book');
       bookCard.setAttribute("id", `${myLibrary[i].title}`);
+      bookCard.setAttribute("data-index", `${i}`);
       cardTable.appendChild(cardTitle);
       cardTable.appendChild(cardAut);
       cardTable.appendChild(cardPages);
@@ -95,6 +110,10 @@ function displayBooks() {
       let btn2 = document.createElement("BUTTON");
       btn2.innerHTML = "read the book";
       btn2.classList.add("btn2");
+      btn2.addEventListener('click', () => {
+        let card = btn2.parentNode.id;
+        console.log(card);
+      })
       bookCard.appendChild(btn2);
       cardsContainer.appendChild(bookCard);
     }
@@ -126,9 +145,11 @@ function deleteBook() {
     let contChild = containerChildren[i];
     let btnChild = contChild.querySelector('button');
     let indexChild = btnChild.getAttribute('data-index');
+    let childIndex = contChild.getAttribute('data-index');
     let newIndex = indexChild - 1;
     if(Number(indexChild) > indexNumber) {
-      btnChild.setAttribute('data-index', `${newIndex}`)
+      btnChild.setAttribute('data-index', `${newIndex}`);
+      childIndex.setAttribute('data-index', `${newIndex}`);
       console.log(`new index = ${newIndex}`);
     } else {
       console.log(Number(btnChild.getAttribute('data-index')));
