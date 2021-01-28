@@ -13,10 +13,10 @@ function Book(title, author, pages, read) {
         return `${title} by ${author}, ${pages} pages, ${read}`
       }
     this.changeRead = function() {
-      if(read == 'not yet read') {
-        read = 'read';
+      if(this.read == 'not yet read') {
+        this.read = 'read';
     } else {
-    read = 'not yet read';
+    this.read = 'not yet read';
     } } 
   }
 
@@ -96,6 +96,7 @@ function displayBooks() {
       let re2 = `${myLibrary[i].read}`
       let r2 = document.createTextNode(re2);
       read2.appendChild(r2);
+      read2.classList.add('readstatus');
       cardRead.appendChild(read1);
       cardRead.appendChild(read2);
       bookCard.classList.add('book');
@@ -116,8 +117,10 @@ function displayBooks() {
       btn2.innerHTML = "read the book";
       btn2.classList.add("btn2");
       btn2.addEventListener('click', () => {
-        let card = btn2.parentNode.id;
-        console.log(card);
+        let card = btn2.parentNode.getAttribute('data-index');
+        myLibrary[card].changeRead();
+        // find child from parent node with class read to change the read status
+        console.log(myLibrary[card]);
       })
       bookCard.appendChild(btn2);
       cardsContainer.appendChild(bookCard);
