@@ -34,16 +34,21 @@ function addBookToLibrary() {
         read = 'not yet read';
     }}
 
-    /*for (i = 0; i < cardsContainer.length; i++) {
-      let contChild = cardsContainer.childNodes;
-      if(contChild[i].id == bookName) {
-        console.log('already exists');
-      }  else {*/
+    let x;
+    
+    if(myLibrary.length > 0) {
+      for (x in myLibrary) {
+        if(x[title] == bookName) {
+          console.log('already exists');
+        } else {
+          myLibrary.push(new Book(bookName, authorName, pages, read));
+          return;
+        }
+    }} else {
         myLibrary.push(new Book(bookName, authorName, pages, read));
-      //} 
-    //}  
+      } 
+    }  
   
-}
 
 function displayBooks() {
   for (i = 0; i < myLibrary.length; i++) {
