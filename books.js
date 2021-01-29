@@ -117,10 +117,15 @@ function displayBooks() {
       btn2.innerHTML = "read the book";
       btn2.classList.add("btn2");
       btn2.addEventListener('click', () => {
-        let card = btn2.parentNode.getAttribute('data-index');
+        let parentCard = btn2.parentNode;
+        let card = parentCard.getAttribute('data-index');
         myLibrary[card].changeRead();
-        // find child from parent node with class read to change the read status
-        console.log(myLibrary[card]);
+        let readstatus = parentCard.querySelector('.readstatus');        
+        if(readstatus.innerHTML == 'read') {
+          readstatus.innerHTML = 'not yet read'
+        } else {
+          readstatus.innerHTML = 'read'
+        }
       })
       bookCard.appendChild(btn2);
       cardsContainer.appendChild(bookCard);
@@ -157,8 +162,7 @@ function deleteBook() {
     let newIndex = indexChild - 1;
     if(Number(indexChild) > indexNumber) {
       btnChild.setAttribute('data-index', `${newIndex}`);
-      childIndex.setAttribute('data-index', `${newIndex}`);
-      console.log(`new index = ${newIndex}`);
+      contChild.setAttribute('data-index', `${newIndex}`);
     } else {
       console.log(Number(btnChild.getAttribute('data-index')));
     }
