@@ -2,32 +2,37 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>library</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="style.css"> 
   </head>
 
   <body>
-    <h1>Book library</h1>
-    <button id="showform">add a book!</button>
-   <div id="input" class="input1">
-     <h2>add a book</h2>
-     <form>
-      <label for="title">book title</label><br> 
-      <input type="text" id="title" placeholder="book title"><br>
-      <label for="author">author</label><br> 
-      <input type="text" id="author" placeholder="name"><br>
-      <label for="pages">number of pages</label> <br>
-      <input type="text" id="pages" placeholder="1000"><br>
-      <label for="read">read the book</label><br>
-      <input type="radio" id="yesread" name="read" value="yes">
-      <label for="yesread">yes</label><br>
-      <input type="radio" id="notread" name="read" value="no">
-      <label for="notread">no</label><br>
-      <input type="button" value="submit" id="submit">
-     </form>
+   <div id="container">
+    <div id="display">
+      <p id="displaytext">0</p>
+    </div>
+    <div id="buttons">
+      <button id="bclear">clear</button>
+      <button id="b/" class="operator">/</button>
+      <button id="b7" class="number">7</button>
+      <button id="b8" class="number">8</button>
+      <button id="b9" class="number">9</button>
+      <button id="bx" class="operator">x</button>
+      <button id="b4" class="number">4</button>
+      <button id="b5" class="number">5</button>
+      <button id="b6" class="number">6</button>
+      <button id="b-" class="operator">-</button>
+      <button id="b1" class="number">1</button>
+      <button id="b2" class="number">2</button>
+      <button id="b3" class="number">3</button>
+      <button id="b+" class="operator">+</button>
+      <button id="b0" class="number">0</button>
+      <button id="b." class="period">.</button>
+      <button id="bis">=</button>
+      
+    </div>
    </div>
-   <div id="cardscontainer"></div>
-   <script src="books.js"></script>
+   <script src="script.js"></script>
   </body>
 
 </html>
