@@ -40,13 +40,23 @@ function addBookToLibrary() {
       for (x in myLibrary) {
         if(x[title] == bookName) {
           console.log('already exists');
+        } else if(bookName == "" || authorName == "" || pages == "") {
+          console.log('info not put in correctly!')
         } else {
           myLibrary.push(new Book(bookName, authorName, pages, read));
           return;
         }
-    }} else {
+      }} else if(bookName == "" || authorName == "" || pages == "") {
+      console.log('info not put in correctly!')
+      } else {
         myLibrary.push(new Book(bookName, authorName, pages, read));
-      } 
+      }
+      if(bookName == "" || authorName == "" || pages == "") {
+
+      } else {
+        form.classList.toggle('input1');
+        form.classList.toggle('input2');
+      }  
     }  
   
 
@@ -131,8 +141,6 @@ function displayBooks() {
       cardsContainer.appendChild(bookCard);
     }
   }
-  form.classList.toggle('input1');
-  form.classList.toggle('input2');
 }
 
 function showForm() {
